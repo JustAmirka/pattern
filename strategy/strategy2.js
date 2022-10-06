@@ -1,33 +1,30 @@
 class ManagerOfStrategy {
     constructor() {
-        this._strategy = null;
+        this.str = null;
     }
     set strategy(strategy) {
-        this._strategy = strategy;
+        this.str = strategy;
     }
-    get strategy() {
-        return this._strategy;
-    }
-    doAction() {
-        this._strategy.doAction();
+    doOperation() {
+        this.str.doOperation();
     }
 }
 class Strategy1 {
-    doAction() {
+    doOperation() {
         console.log('StrategyPattern1');
     }
 }
 class Strategy2 {
-    doAction() {
+    doOperation() {
         console.log('StrategyPattern2');
     }
 }
-const strategyManager = new ManagerOfStrategy();
+const managerOfStrategy = new ManagerOfStrategy();
 const strategy1 = new Strategy1();
 const strategy2 = new Strategy2();
 
-strategyManager.strategy = strategy1;
-strategyManager.doAction();
+managerOfStrategy.strategy = strategy1;
+managerOfStrategy.doOperation();
 
-strategyManager.strategy = strategy2;
-strategyManager.doAction();
+managerOfStrategy.strategy = strategy2;
+managerOfStrategy.doOperation();

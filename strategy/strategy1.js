@@ -1,32 +1,29 @@
 
 class Salutation {
   constructor() {
-    this._strategy = null;
+    this.str = null;
   }
   set strategy(strategy) {
-    this._strategy = strategy;
+    this.str = strategy;
   }
-  get strategy() {
-    return this._strategy;
-  }
-  doAction() {
-    this._strategy.doAction();
+  doOperation() {
+    this.str.doOperation();
   }
 }
 class politeSalutationStrategy {
-  doAction() {
+  doOperation() {
     console.log("Hello!");
   }
 }
 
 class friendlySalutationStrategy{
-  doAction() {
+  doOperation() {
     console.log("Howdy!");
   }
 }
 
 class kazakhSalutationStrategy {
-  doAction() {
+  doOperation() {
     console.log("Salem");
   }
 }
@@ -36,8 +33,8 @@ const friendlySalutation = new friendlySalutationStrategy();
 const kazakhSalutation = new kazakhSalutationStrategy();
 
 salutation.strategy = politeSalutation;
-salutation.doAction();
+salutation.doOperation();
 salutation.strategy = friendlySalutation;
-salutation.doAction();
+salutation.doOperation();
 salutation.strategy = kazakhSalutation;
-salutation.doAction();
+salutation.doOperation();
